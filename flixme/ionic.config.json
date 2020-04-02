@@ -1,0 +1,7 @@
+{
+  "name": "flixme",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
