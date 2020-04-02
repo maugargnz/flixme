@@ -1,6 +1,5 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard } from '@ionic/react';
 import React from 'react';
-import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -8,16 +7,24 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Flixme</IonTitle>
+          <IonTitle color="primary">Flixme</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Flixme</IonTitle>
+            <IonTitle color="primary" size="large">Flixme</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer />
+        <IonGrid>
+          <IonRow>
+            <IonCol size="6" size-sm="4" size-md="3" size-lg="3" size-xl="2">
+              <IonCard>
+                <img src="http://www.coverwhiz.com/content/The-Fast-And-The-Furious.jpg" alt="cover-img"/>
+              </IonCard>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );
