@@ -19,7 +19,7 @@ const Home: React.FC = () => {
         <IonGrid>
           <IonRow>
             <IonCol size="6" size-sm="4" size-md="3" size-lg="3" size-xl="2">
-              <IonCard>
+              <IonCard routerLink="/movie">
                 <img src="http://www.coverwhiz.com/content/The-Fast-And-The-Furious.jpg" alt="cover-img"/>
               </IonCard>
             </IonCol>
