@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonImg, IonList, IonItem, IonText } from '@ionic/react';
 import React from 'react';
 import axios from 'axios';
 import './Home.css';
@@ -45,29 +45,23 @@ const Home: React.FC = () => {
           <IonRow>
             <IonCol size="6" size-sm="4" size-md="3" size-lg="3" size-xl="2">
               <IonCard routerLink="/movie">
-                <img src="http://www.coverwhiz.com/content/The-Fast-And-The-Furious.jpg" alt="cover-img" />
+                <IonImg src="http://www.coverwhiz.com/content/The-Fast-And-The-Furious.jpg" />
               </IonCard>
             </IonCol>
 
-            {
-              items.map(item => {
-
-                return (
-                  <IonCol size="6" size-sm="4" size-md="3" size-lg="3" size-xl="2">
-                    <IonCard>
-                      <img src={item['urlToImage']} alt="img-cover" />
-                      <IonCardHeader>
-                        <IonCardSubtitle>{item['author']}</IonCardSubtitle>
-                        <IonCardTitle>{item['title']}</IonCardTitle>
-                      </IonCardHeader>
-                      <IonCardContent>
-                      {item['content']}
-                      </IonCardContent>
-                    </IonCard>
-                  </IonCol>
-                );
-              })
-            }
+            {items.map((item) =>
+              <IonCol key={item['title']} size="6" size-sm="4" size-md="3" size-lg="3" size-xl="2">
+                <IonCard>
+                  <img src={item['urlToImage']} alt="img-cover" />
+                  <IonCardHeader>
+                    <IonCardSubtitle>{item['author']}</IonCardSubtitle>
+                    <IonCardTitle>{item['title']}</IonCardTitle>
+                  </IonCardHeader>
+                  <IonCardContent>
+                    {item['content']}
+                  </IonCardContent>
+                </IonCard>
+              </IonCol>)}
           </IonRow>
         </IonGrid>
       </IonContent>
