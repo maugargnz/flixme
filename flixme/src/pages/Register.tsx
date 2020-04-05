@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonImg, IonList, IonItem, IonText, IonAvatar, IonLabel, IonItemOptions, IonItemSliding, IonItemOption, IonSearchbar, IonButtons, IonBackButton, IonInput, IonButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonImg, IonList, IonItem, IonText, IonAvatar, IonLabel, IonItemOptions, IonItemSliding, IonItemOption, IonSearchbar, IonButtons, IonBackButton, IonInput, IonButton, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import './_Global.css';
@@ -11,12 +11,15 @@ import { registerUser } from '../firebaseConfig'
 
 const Register: React.FC = () => {
 
+  const [busy, setBusy] = useState<boolean>(false)
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [cpassword, setCPassword] = useState('')
 
   async function register(){
     //Validation
+    setBusy(true)
     if(password !== cpassword){
       return toast('Password do not match')
     }
@@ -28,6 +31,7 @@ const Register: React.FC = () => {
     if(res){
       toast('You have registered sucessfully!')
     }
+    setBusy(false)
 
   }
 
@@ -46,6 +50,7 @@ const Register: React.FC = () => {
           <IonTitle color="primary" size="large">Register</IonTitle>
         </IonToolbar>
       </IonHeader>
+      <IonLoading message="Registration in progress!" duration={0} isOpen={busy} />
       <IonContent className="ion-padding">
       <IonInput type="email" placeholder="Email" onIonChange={(e: any) => setUsername(e.target.value)} />
         <IonInput type="password" placeholder="Password" onIonChange={(e: any) => setPassword(e.target.value)}/>
