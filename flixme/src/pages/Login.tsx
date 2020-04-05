@@ -28,8 +28,8 @@ const Login: React.FC = () => {
           </IonToolbar>
         </IonHeader>
       <IonContent className="ion-padding">
-        <IonInput placeholder="Email" onIonChange={(e: any) => setUsername(e.target.value)} />
-        <IonInput placeholder="Password" onIonChange={(e: any) => setPassword(e.target.value)}/>
+        <IonInput type="email" placeholder="Email" onIonChange={(e: any) => setUsername(e.target.value)} />
+        <IonInput type="password" placeholder="Password" onIonChange={(e: any) => setPassword(e.target.value)}/>
         <IonButton expand="full" onClick={loginUser}>Login</IonButton>
         {/* <IonButton expand="full" routerLink="/register">Register</IonButton> */}
         <p>
