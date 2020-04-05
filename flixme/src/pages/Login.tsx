@@ -1,8 +1,11 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonImg, IonList, IonItem, IonText, IonAvatar, IonLabel, IonItemOptions, IonItemSliding, IonItemOption, IonSearchbar, IonInput, IonButton } from '@ionic/react';
 import React, { useState } from 'react';
-import axios from 'axios';
 import './_Global.css';
 import { Link } from 'react-router-dom';
+
+/* Firebase */
+import { loginUser } from '../firebaseConfig'
+import { toast } from '../toast';
 
 
 
@@ -11,8 +14,11 @@ const Login: React.FC = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  function loginUser(){
-    console.log(username, password)
+  async function login(){
+    const res = await loginUser(username, password)
+    if (res){
+      toast('You have logged in!')
+    }
   }
 
   return (
@@ -30,7 +36,7 @@ const Login: React.FC = () => {
       <IonContent className="ion-padding">
         <IonInput type="email" placeholder="Email" onIonChange={(e: any) => setUsername(e.target.value)} />
         <IonInput type="password" placeholder="Password" onIonChange={(e: any) => setPassword(e.target.value)}/>
-        <IonButton expand="full" onClick={loginUser}>Login</IonButton>
+        <IonButton expand="full" onClick={login}>Login</IonButton>
         {/* <IonButton expand="full" routerLink="/register">Register</IonButton> */}
         <p>
           New here? <Link to="/register">Register</Link>
