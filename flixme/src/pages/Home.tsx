@@ -1,7 +1,7 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonImg, IonList, IonItem, IonText, IonAvatar, IonLabel, IonItemOptions, IonItemSliding, IonItemOption } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonImg, IonList, IonItem, IonText, IonAvatar, IonLabel, IonItemOptions, IonItemSliding, IonItemOption, IonSearchbar } from '@ionic/react';
 import React from 'react';
 import axios from 'axios';
-import './Home.css';
+import './_Global.css';
 
 const API_KEY = '2f11a380e1e347fda2aa2861bdd39f20';
 const endpoint = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`;
@@ -69,7 +69,42 @@ const movies = [
     description: 'Shaun Boswell es un chico que no acaba de encajar en ningún grupo. En el instituto es un solitario, su única conexión con el mundo de indiferencia que le rodea es a través de las carreras ilegales, lo que no le ha convertido en el chico favorito de la policía.',
     image: 'http://www.coverwhiz.com/content/Hobbs-And-Shaw.jpg',
     video: 'https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4'
-  }
+  },
+  {
+    title: 'Vengadores',
+    subtitle: 'Vengadores',
+    description: 'Shaun Boswell es un chico que no acaba de encajar en ningún grupo. En el instituto es un solitario, su única conexión con el mundo de indiferencia que le rodea es a través de las carreras ilegales, lo que no le ha convertido en el chico favorito de la policía.',
+    image: 'http://www.coverwhiz.com/content/Iron-Man.jpg',
+    video: 'https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4'
+  },
+  {
+    title: 'Vengadores',
+    subtitle: 'Vengadores',
+    description: 'Shaun Boswell es un chico que no acaba de encajar en ningún grupo. En el instituto es un solitario, su única conexión con el mundo de indiferencia que le rodea es a través de las carreras ilegales, lo que no le ha convertido en el chico favorito de la policía.',
+    image: 'http://www.coverwhiz.com/content/The-Incredible-Hulk.jpg',
+    video: 'https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4'
+  },
+  {
+    title: 'Vengadores',
+    subtitle: 'Vengadores',
+    description: 'Shaun Boswell es un chico que no acaba de encajar en ningún grupo. En el instituto es un solitario, su única conexión con el mundo de indiferencia que le rodea es a través de las carreras ilegales, lo que no le ha convertido en el chico favorito de la policía.',
+    image: 'http://www.coverwhiz.com/content/Iron-Man-2.jpg',
+    video: 'https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4'
+  },
+  {
+    title: 'Vengadores',
+    subtitle: 'Vengadores',
+    description: 'Shaun Boswell es un chico que no acaba de encajar en ningún grupo. En el instituto es un solitario, su única conexión con el mundo de indiferencia que le rodea es a través de las carreras ilegales, lo que no le ha convertido en el chico favorito de la policía.',
+    image: 'http://www.coverwhiz.com/content/Thor.jpg',
+    video: 'https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4'
+  },
+  {
+    title: 'Vengadores',
+    subtitle: 'Vengadores',
+    description: 'Shaun Boswell es un chico que no acaba de encajar en ningún grupo. En el instituto es un solitario, su única conexión con el mundo de indiferencia que le rodea es a través de las carreras ilegales, lo que no le ha convertido en el chico favorito de la policía.',
+    image: 'http://www.coverwhiz.com/content/Captain-America-The-First-Avenger.jpg',
+    video: 'https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4'
+  },
 ]
 
 const sendGetRequest = () => {
@@ -107,6 +142,7 @@ const Home: React.FC = () => {
             <IonTitle color="primary" size="large">Flixme</IonTitle>
           </IonToolbar>
         </IonHeader>
+        <IonSearchbar></IonSearchbar>
         <IonGrid>
           <IonRow>
             {movies.map((movie) =>

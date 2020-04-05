@@ -1,0 +1,16 @@
+{
+    "movies": [{
+        "title": "Fast and Furious 1",
+        "subtitle": "Rápidos y Furiosos 1",
+        "description": " Una misteriosa banda de delincuentes se dedica a robar camiones en marcha desde vehículos deportivos. La policía decide infiltrar un hombre en el mundo de las carreras ilegales para descubrir posibles sospechosos.",
+        "image": "http://www.coverwhiz.com/content/The-Fast-And-The-Furious.jpg",
+        "video": "https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4"
+    },
+    {
+        "title": "Fast and Furious 2",
+        "subtitle": "Rápidos y Furiosos 2",
+        "description": "Brian O’Connor (Paul Walker), un policía caído en desgracia, fue un adicto a la velocidad y ahora está pagando un precio por ello. Tal y como lo ven sus antiguos jefes y los altos mandos del FBI, este agente de incógnito les echó a perder una de las investigaciones más importantes que habían emprendido.",
+        "image": "http://www.coverwhiz.com/content/2-Fast-2-Furious.jpg",
+        "video": "https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4"
+    }]
+}

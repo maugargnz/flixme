@@ -1,7 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonButtons, IonBackButton, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonProgressBar } from '@ionic/react';
 import React from 'react';
 import ReactPlayer from 'react-player'
-import './Home.css';
+import './_Global.css';
 
 const Movie: React.FC = () => {
     return (
