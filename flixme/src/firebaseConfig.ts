@@ -16,39 +16,21 @@ const config = {
 
 firebase.initializeApp(config)
 
-export function getCurrentUser(){
-    return new Promise((resolve, reject) => {
-        const unsubscribe = firebase.auth().onAuthStateChanged(function(user){
-            if(user){
-                resolve(user)
-            } else {
-                resolve(null)
-            }
-            unsubscribe()
-        })
-    })
-}
-
-export async function loginUser(username: string, password: string){
+export async function loginUser(username: string, password: string) {
     const email = `${username}@gmail.com`
 
-    try{
+    try {
         const res = await firebase.auth().signInWithEmailAndPassword(email, password)
         return res
-    }catch (error){
+    } catch (error) {
         toast(error.message, 4000)
         return false
     }
-
-
-    // authenticate with firebase
-    // if present, show dashboard
-    // if not, show error
 }
 
-export async function registerUser(username: string, password: string){
+export async function registerUser(username: string, password: string) {
     const email = `${username}@gmail.com`
-    try{
+    try {
         const res = await firebase.auth().createUserWithEmailAndPassword(email, password)
         console.log(res)
         return true
@@ -59,6 +41,19 @@ export async function registerUser(username: string, password: string){
 
 }
 
-export function logoutUser(){
+export function getCurrentUser() {
+    return new Promise((resolve, reject) => {
+        const unsubscribe = firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                resolve(user)
+            } else {
+                resolve(null)
+            }
+            unsubscribe()
+        })
+    })
+}
+
+export function logoutUser() {
     return firebase.auth().signOut()
 }
