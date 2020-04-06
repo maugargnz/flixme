@@ -67,7 +67,7 @@ const App: React.FC = () => {
       }
       setBusy(false)
     })
-  }, [])
+  })
 
 return(
   <IonApp>

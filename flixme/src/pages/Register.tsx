@@ -1,6 +1,5 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonImg, IonList, IonItem, IonText, IonAvatar, IonLabel, IonItemOptions, IonItemSliding, IonItemOption, IonSearchbar, IonButtons, IonBackButton, IonInput, IonButton, IonLoading } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonBackButton, IonInput, IonButton, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
-import axios from 'axios';
 import './_Global.css';
 import { Link } from 'react-router-dom';
 import { toast } from '../toast';

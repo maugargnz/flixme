@@ -1,6 +1,7 @@
-import * as firebase from 'firebase'
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 import { toast } from './toast'
-import { resolve } from 'dns'
 
 const config = {
     apiKey: "AIzaSyAXsMdq3h3B0vDLqBAxylCRd50vEakdrLM",

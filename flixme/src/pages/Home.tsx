@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonImg, IonList, IonItem, IonText, IonAvatar, IonLabel, IonItemOptions, IonItemSliding, IonItemOption, IonSearchbar, IonButton, IonLoading } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonImg, IonSearchbar, IonButton, IonLoading, IonCardContent, IonCardSubtitle, IonCardHeader, IonCardTitle } from '@ionic/react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import './_Global.css';
@@ -170,7 +170,7 @@ const Home: React.FC = () => {
                   <IonImg src={movie.image} alt="img-cover" />
                 </IonCard>
               </IonCol>)}
-            {/* {items.map((item) =>
+            {items.map((item) =>
               <IonCol key={item['title']} size="6" size-sm="4" size-md="3" size-lg="3" size-xl="2">
                 <IonCard>
                   <img src={item['urlToImage']} alt="img-cover" />
@@ -182,7 +182,7 @@ const Home: React.FC = () => {
                     {item['content']}
                   </IonCardContent>
                 </IonCard>
-              </IonCol>)} */}
+              </IonCol>)}
           </IonRow>
         </IonGrid>
       </IonContent>
