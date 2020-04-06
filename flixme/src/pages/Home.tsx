@@ -1,8 +1,10 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonImg, IonList, IonItem, IonText, IonAvatar, IonLabel, IonItemOptions, IonItemSliding, IonItemOption, IonSearchbar } from '@ionic/react';
-import React from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonImg, IonList, IonItem, IonText, IonAvatar, IonLabel, IonItemOptions, IonItemSliding, IonItemOption, IonSearchbar, IonButton, IonLoading } from '@ionic/react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import './_Global.css';
 import { useSelector } from 'react-redux';
+import { logoutUser } from '../firebaseConfig'
+import { useHistory } from 'react-router';
 
 const API_KEY = '2f11a380e1e347fda2aa2861bdd39f20';
 const endpoint = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`;
@@ -132,6 +134,17 @@ const Home: React.FC = () => {
 
   const username = useSelector((state: any) => state.user.username)
 
+  const history = useHistory()
+
+  async function logout(){
+    setBusy(true)
+    await logoutUser()
+    history.replace('/')
+    setBusy(false)
+  }
+
+  const [busy, setBusy] = useState(false)
+
   return (
     <IonPage>
       <IonHeader>
@@ -145,8 +158,10 @@ const Home: React.FC = () => {
             <IonTitle color="primary" size="large">Flixme</IonTitle>
           </IonToolbar>
         </IonHeader>
+        <IonLoading message="Loggin out ..." duration={0} isOpen={busy} />
         <IonSearchbar></IonSearchbar>
-  <h1>Hello {username}</h1>
+        <h1>Hello {username}</h1>
+        <IonButton onClick={logout}>Logout</IonButton>
         <IonGrid>
           <IonRow>
             {movies.map((movie) =>
