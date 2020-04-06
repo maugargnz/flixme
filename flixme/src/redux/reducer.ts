@@ -3,7 +3,9 @@ export default function reducer(state = [], {type, payload}:{type: string, paylo
         case 'SET_USER_STATE':
             return{
                 ...state,
-                userData: payload
+                user: {
+                    username: payload.split('@')[0]
+                }
             }
     }
     return state

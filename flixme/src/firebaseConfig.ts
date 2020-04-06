@@ -1,5 +1,6 @@
 import * as firebase from 'firebase'
 import { toast } from './toast'
+import { resolve } from 'dns'
 
 const config = {
     apiKey: "AIzaSyAXsMdq3h3B0vDLqBAxylCRd50vEakdrLM",
@@ -13,6 +14,19 @@ const config = {
 }
 
 firebase.initializeApp(config)
+
+export function getCurrentUser(){
+    return new Promise((resolve, reject) => {
+        const unsubscribe = firebase.auth().onAuthStateChanged(function(user){
+            if(user){
+                resolve(user)
+            } else {
+                resolve(null)
+            }
+            unsubscribe()
+        })
+    })
+}
 
 export async function loginUser(username: string, password: string){
     const email = `${username}@gmail.com`

@@ -2,6 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, 
 import React from 'react';
 import axios from 'axios';
 import './_Global.css';
+import { useSelector } from 'react-redux';
 
 const API_KEY = '2f11a380e1e347fda2aa2861bdd39f20';
 const endpoint = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`;
@@ -129,6 +130,8 @@ const Home: React.FC = () => {
 
   }, []);
 
+  const username = useSelector((state: any) => state.user.username)
+
   return (
     <IonPage>
       <IonHeader>
@@ -143,6 +146,7 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <IonSearchbar></IonSearchbar>
+  <h1>Hello {username}</h1>
         <IonGrid>
           <IonRow>
             {movies.map((movie) =>
