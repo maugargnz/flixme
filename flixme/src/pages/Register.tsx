@@ -17,21 +17,22 @@ const Register: React.FC = () => {
   const [password, setPassword] = useState('')
   const [cpassword, setCPassword] = useState('')
 
-  async function register(){
+  async function register() {
     //Validation
     setBusy(true)
-    if(password !== cpassword){
+    if (password !== cpassword) {
+      setBusy(false)
       return toast('Password do not match')
     }
-    if(username.trim() === '' || password.trim() === ''){
+    if (username.trim() === '' || password.trim() === '') {
+      setBusy(false)
       return toast('Username and password are required')
     }
-
     const res = await registerUser(username, password)
-    if(res){
+    setBusy(false)
+    if (res) {
       toast('You have registered sucessfully!')
     }
-    setBusy(false)
 
   }
 
@@ -52,9 +53,9 @@ const Register: React.FC = () => {
       </IonHeader>
       <IonLoading message="Registration in progress!" duration={0} isOpen={busy} />
       <IonContent className="ion-padding">
-      <IonInput type="email" placeholder="Email" onIonChange={(e: any) => setUsername(e.target.value)} />
-        <IonInput type="password" placeholder="Password" onIonChange={(e: any) => setPassword(e.target.value)}/>
-        <IonInput type="password" placeholder="Confirm Password" onIonChange={(e: any) => setCPassword(e.target.value)}/>
+        <IonInput type="email" placeholder="Email" onIonChange={(e: any) => setUsername(e.target.value)} />
+        <IonInput type="password" placeholder="Password" onIonChange={(e: any) => setPassword(e.target.value)} />
+        <IonInput type="password" placeholder="Confirm Password" onIonChange={(e: any) => setCPassword(e.target.value)} />
         <IonButton expand="full" onClick={register}>Register</IonButton>
         <p>
           Already have an account? <Link to="/login">Login</Link>

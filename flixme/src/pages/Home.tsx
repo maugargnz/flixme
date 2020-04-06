@@ -81,28 +81,28 @@ const movies = [
     video: 'https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4'
   },
   {
-    title: 'Vengadores',
+    title: 'Vengadores 1',
     subtitle: 'Vengadores',
     description: 'Shaun Boswell es un chico que no acaba de encajar en ningún grupo. En el instituto es un solitario, su única conexión con el mundo de indiferencia que le rodea es a través de las carreras ilegales, lo que no le ha convertido en el chico favorito de la policía.',
     image: 'http://www.coverwhiz.com/content/The-Incredible-Hulk.jpg',
     video: 'https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4'
   },
   {
-    title: 'Vengadores',
+    title: 'Vengadores 2',
     subtitle: 'Vengadores',
     description: 'Shaun Boswell es un chico que no acaba de encajar en ningún grupo. En el instituto es un solitario, su única conexión con el mundo de indiferencia que le rodea es a través de las carreras ilegales, lo que no le ha convertido en el chico favorito de la policía.',
     image: 'http://www.coverwhiz.com/content/Iron-Man-2.jpg',
     video: 'https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4'
   },
   {
-    title: 'Vengadores',
+    title: 'Vengadores 3',
     subtitle: 'Vengadores',
     description: 'Shaun Boswell es un chico que no acaba de encajar en ningún grupo. En el instituto es un solitario, su única conexión con el mundo de indiferencia que le rodea es a través de las carreras ilegales, lo que no le ha convertido en el chico favorito de la policía.',
     image: 'http://www.coverwhiz.com/content/Thor.jpg',
     video: 'https://www43.o0-1.com/token=VLMuUDkIg0Ts3VSYWD2t1w/1586041021/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4'
   },
   {
-    title: 'Vengadores',
+    title: 'Vengadores 4',
     subtitle: 'Vengadores',
     description: 'Shaun Boswell es un chico que no acaba de encajar en ningún grupo. En el instituto es un solitario, su única conexión con el mundo de indiferencia que le rodea es a través de las carreras ilegales, lo que no le ha convertido en el chico favorito de la policía.',
     image: 'http://www.coverwhiz.com/content/Captain-America-The-First-Avenger.jpg',
