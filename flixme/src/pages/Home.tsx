@@ -1,6 +1,6 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonImg, IonSearchbar, IonButton, IonLoading, IonCardContent, IonCardSubtitle, IonCardHeader, IonCardTitle } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonImg, IonSearchbar, IonButton, IonLoading } from '@ionic/react';
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import './_Global.css';
 import { useSelector } from 'react-redux';
 import { logoutUser } from '../firebaseConfig'
@@ -8,30 +8,30 @@ import { useHistory } from 'react-router';
 
 import movies from '../data/movies'
 
-const API_KEY = '2f11a380e1e347fda2aa2861bdd39f20';
-const endpoint = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`;
+// const API_KEY = '2f11a380e1e347fda2aa2861bdd39f20';
+// const endpoint = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`;
 
-const sendGetRequest = () => {
+// const sendGetRequest = () => {
 
-  return axios({
-    url: endpoint,
-    method: 'get'
-  }).then(response => {
+//   return axios({
+//     url: endpoint,
+//     method: 'get'
+//   }).then(response => {
 
-    console.log(response);
-    return response.data;
-  })
-};
+//     console.log(response);
+//     return response.data;
+//   })
+// };
 
 const Home: React.FC = () => {
 
-  const [items, setItems] = React.useState([]);
+  // const [items, setItems] = React.useState([]);
 
-  React.useEffect(() => {
+  // React.useEffect(() => {
 
-    sendGetRequest().then(data => setItems(data.articles));
+  //   sendGetRequest().then(data => setItems(data.articles));
 
-  }, []);
+  // }, []);
 
   const username = useSelector((state: any) => state.user.username)
 
@@ -71,7 +71,7 @@ const Home: React.FC = () => {
                   <IonImg src={movie.image} alt="img-cover" />
                 </IonCard>
               </IonCol>)}
-            {items.map((item) =>
+            {/* {items.map((item) =>
               <IonCol key={item['title']} size="6" size-sm="4" size-md="3" size-lg="3" size-xl="2">
                 <IonCard>
                   <img src={item['urlToImage']} alt="img-cover" />
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
                     {item['content']}
                   </IonCardContent>
                 </IonCard>
-              </IonCol>)}
+              </IonCol>)} */}
           </IonRow>
         </IonGrid>
       </IonContent>

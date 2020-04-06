@@ -58,7 +58,7 @@ const App: React.FC = () => {
 
   useEffect(() =>{
     getCurrentUser().then((user:any) => {
-      console.log(user)
+      // console.log(user)
       if(user){
         dispatch(setUserState(user.email))
         window.history.replaceState({}, '', '/home')
