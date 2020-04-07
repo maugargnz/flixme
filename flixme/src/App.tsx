@@ -44,7 +44,7 @@ const RoutingSystem: React.FC = () => {
       <Route path="/login" component={Login} exact={true} />
       <Route path="/register" component={Register} exact={true} />
       <Route path="/home" component={Home} exact={true} />
-      <Route path="/movie" component={Movie} exact={true} />
+      <Route path="/movie/:id" component={Movie} exact={true} />
       <Route exact path="/" render={() => <Redirect to="/login" />} />
     </IonRouterOutlet>
   </IonReactRouter>

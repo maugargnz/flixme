@@ -67,7 +67,7 @@ const Home: React.FC = () => {
           <IonRow>
             {movies.map((movie) =>
               <IonCol key={movie['title']} size="6" size-sm="4" size-md="3" size-lg="3" size-xl="2">
-                <IonCard routerLink="/movie">
+                <IonCard routerLink={`/movie/${movie.id}`}>
                   <IonImg src={movie.image} alt="img-cover" />
                 </IonCard>
               </IonCol>)}
