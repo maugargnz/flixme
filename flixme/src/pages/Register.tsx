@@ -16,6 +16,10 @@ const Register: React.FC = () => {
   const [password, setPassword] = useState('')
   const [cpassword, setCPassword] = useState('')
 
+  function emailIsValid () {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(username)
+  }
+
   async function register() {
     //Validation
     setBusy(true)
@@ -25,8 +29,15 @@ const Register: React.FC = () => {
     }
     if (username.trim() === '' || password.trim() === '') {
       setBusy(false)
-      return toast('Username and password are required')
+      return toast('Email and password are required')
     }
+    if (emailIsValid() === false){
+      setBusy(false)
+      return toast('Email failed')
+    }
+
+
+
     const res = await registerUser(username, password)
     setBusy(false)
     if (res) {

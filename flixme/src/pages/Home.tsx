@@ -1,10 +1,9 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonImg, IonSearchbar, IonButton, IonLoading } from '@ionic/react';
-import React, { useState } from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonCard, IonImg, IonButton, IonButtons, IonIcon } from '@ionic/react';
+import React from 'react';
 // import axios from 'axios';
 import './_Global.css';
-import { useSelector } from 'react-redux';
-import { logoutUser } from '../firebaseConfig'
-import { useHistory } from 'react-router';
+import { personCircleOutline } from 'ionicons/icons';
+
 
 import movies from '../data/movies'
 
@@ -33,19 +32,6 @@ const Home: React.FC = () => {
 
   // }, []);
 
-  const username = useSelector((state: any) => state.user.username)
-
-  const history = useHistory()
-
-  async function logout(){
-    setBusy(true)
-    await logoutUser()
-    history.replace('/')
-    setBusy(false)
-  }
-
-  const [busy, setBusy] = useState(false)
-
   return (
     <IonPage>
       <IonHeader>
@@ -57,12 +43,11 @@ const Home: React.FC = () => {
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle color="primary" size="large">Flixme</IonTitle>
+            <IonButtons slot="end">
+              <IonButton routerLink="/user"><IonIcon slot="icon-only" icon={personCircleOutline} /></IonButton>
+            </IonButtons>
           </IonToolbar>
         </IonHeader>
-        <IonLoading message="Loggin out ..." duration={0} isOpen={busy} />
-        <IonSearchbar></IonSearchbar>
-        <h1>Hello {username}</h1>
-        <IonButton onClick={logout}>Logout</IonButton>
         <IonGrid>
           <IonRow>
             {movies.map((movie) =>

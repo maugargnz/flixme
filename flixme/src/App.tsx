@@ -27,6 +27,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Movie from './pages/Movie';
+import User from './pages/User';
 
 import {getCurrentUser} from './firebaseConfig'
 import { useDispatch } from 'react-redux';
@@ -44,6 +45,7 @@ const RoutingSystem: React.FC = () => {
       <Route path="/login" component={Login} exact={true} />
       <Route path="/register" component={Register} exact={true} />
       <Route path="/home" component={Home} exact={true} />
+      <Route path="/user" component={User} exact={true} />
       <Route path="/movie/:id" component={Movie} exact={true} />
       <Route exact path="/" render={() => <Redirect to="/login" />} />
     </IonRouterOutlet>
