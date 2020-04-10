@@ -30,12 +30,12 @@ const User: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton></IonBackButton>
                     </IonButtons>
-                    <IonTitle color="primary">User</IonTitle>
+                    <IonTitle>User</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonHeader collapse="condense">
                 <IonToolbar>
-                    <IonTitle color="primary" size="large">User</IonTitle>
+                    <IonTitle size="large">User</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">

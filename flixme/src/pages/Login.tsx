@@ -47,7 +47,6 @@ const Login: React.FC = () => {
         <IonInput type="email" placeholder="Email" onIonChange={(e: any) => setUsername(e.target.value)} />
         <IonInput type="password" placeholder="Password" onIonChange={(e: any) => setPassword(e.target.value)}/>
         <IonButton expand="full" onClick={login}>Login</IonButton>
-        {/* <IonButton expand="full" routerLink="/register">Register</IonButton> */}
         <p>
           New here? <Link to="/register">Register</Link>
         </p>

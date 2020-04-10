@@ -7,9 +7,11 @@ import movies from '../data/movies'
 
 interface MovieProps extends RouteComponentProps<{
     id: string;
-  }> {}
+}> { }
 
-const Movie: React.FC<MovieProps> = ({match}) => {
+const Movie: React.FC<MovieProps> = ({ match }) => {
+    const movieIdNumber = + match.params.id
+    console.log(movieIdNumber - 1)
     return (
         <IonPage>
             <IonHeader>
@@ -27,17 +29,15 @@ const Movie: React.FC<MovieProps> = ({match}) => {
                         <IonProgressBar color="primary" type="indeterminate"></IonProgressBar>
                     </IonToolbar>
                 </IonHeader>
-                <h1>User {match.params.id}</h1>
-                <h1>{movies[1].id}</h1>
                 <IonCard>
-                    <ReactPlayer url='https://www643.o0-2.com/token=9XTvAmROA6sz7h-F8doozw/1586242901/189.216.0.0/28/8/22/5a7328cbb98cfe9298a77ff2d192d228-480p.mp4' playing controls width='100%' height='100%' />
+                    <ReactPlayer url={movies[movieIdNumber - 1].video} playing controls width='100%' height='100%' />
                     <IonCardHeader>
-                        <IonCardSubtitle>Rápidos y Furiosos 1</IonCardSubtitle>
-                        <IonCardTitle>Fast and Furious</IonCardTitle>
+                        <IonCardSubtitle>{movies[movieIdNumber - 1].subtitle}</IonCardSubtitle>
+                        <IonCardTitle>{movies[movieIdNumber - 1].title}</IonCardTitle>
                     </IonCardHeader>
                     <IonCardContent>
-                        Una misteriosa banda de delincuentes se dedica a robar camiones en marcha desde vehículos deportivos. La policía decide infiltrar un hombre en el mundo de las carreras ilegales para descubrir posibles sospechosos.
-                      </IonCardContent>
+                        {movies[movieIdNumber - 1].description}
+                    </IonCardContent>
                 </IonCard>
             </IonContent>
         </IonPage>
